@@ -1,0 +1,133 @@
+ //code for image //
+
+{%if option.name == "Ships From"%} 
+                    <label for="SingleOptionSelector-{{ forloop.index0 }}">
+                      {{ option.name }}
+                      
+                    </label>
+                 
+	{%assign index = forloop.index %}
+        <div class="variant-ship-swatches">
+          {%for value in option.values%}
+           <input class="single-option-selector-{{ section.id }}" id="Ships From-{{forloop.index}}" type="radio" name="Ships From"  value="{{ 		value | escape }}" data-index="option{{index}}"/>
+            <label for="Ships From-{{forloop.index}}">
+              <span>{{ value }}</span>
+                 </label>
+              {%endfor%}
+          </div>
+
+{%endif%}
+
+//end of code for image //
+
+//code for ship From//
+  {%if option.name == "Ships From"%} 
+                    <label for="SingleOptionSelector-{{ forloop.index0 }}">
+                      {{ option.name }}
+                      
+                    </label>
+                    
+            <!-- <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
+                      id="SingleOptionSelector-{{ forloop.index0 }}"
+                      data-index="option{{ forloop.index }}" >	
+		-->
+                    
+					{%assign index = forloop.index %}
+                    <div class="variant-ship-swatches">
+                      {%for value in option.values%}
+                        <input class="single-option-selector-{{ section.id }}" id="Ships From-{{forloop.index}}" type="radio" name="Ships From"  				value="{{ value | escape }}" data-index="option{{index}}"/>
+                        <label for="Ships From-{{forloop.index}}">
+                          <span>{{ value }}</span>
+                          </label>
+                      {%endfor%}
+                  </div>
+
+		{%endif%}
+                     
+//end of code for ship From //
+
+
+<style>
+ .product-form__item {
+    
+    flex-direction: column;
+}
+  .variant-swatches img {
+   
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right:70px;
+    
+    border: 2px solid lightseagreen;
+    transition:all 0.3s;
+}
+  
+  .variant-swatches img:hover , .variant-swatches img:focus , .variant-swatches img:active {
+  
+  
+  border: 2px solid red;
+  
+  }
+  
+   .variant-swatches input {
+     
+    display:none; 
+   }
+  
+  .variant-swatches{
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+  .variant-swatches span{
+      position: relative; 
+    left: 0;
+     top: 0; 
+     bottom: -13px; 
+    background-color: white;
+    box-shadow: 0 0 10px;
+    padding: 2px 4px;
+    border-radius: 4px;
+  opacity:0;
+    transition:all 0.4s linear;
+  
+  }
+  .variant-swatches label{
+  
+  
+  
+  }
+  .variant-swatches label:hover span{
+  
+  
+  bottom: 6px; 
+    opacity:1;
+    
+  }
+  
+  .variant-ship-swatches{
+  display: flex;
+  justify-content: flex-start;
+    
+  }
+  .variant-ship-swatches input{
+  display:none;
+  }
+  .variant-ship-swatches label{
+    border: 2px solid lightseagreen;
+    margin-right:20px;
+    padding:5px;
+    transition:all 0.3s;
+  }
+  .variant-ship-swatches label:hover , .variant-ship-swatches label:focus , .variant-ship-swatches label:active {
+    
+     border: 2px solid red;
+  }
+   .variant-ship-swatches span{
+     padding:2px 15px;
+     display:block;
+     border:2px solid black;
+   
+   }
+ </style>
